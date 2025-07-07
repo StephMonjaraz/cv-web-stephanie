@@ -1,0 +1,411 @@
+/* ---------------------------------------------
+geeral
+--------------------------------------------- */
+body {
+  background-color: #0b0b0b; /*fondo negro para estilo oscuro */
+  color: #e8e6e3; /* texto principal  */
+  font-family: 'Playfair Display', serif; /* Fuente 2 */
+  line-height: 1.6; /*altura de línea */
+  margin: 0; /* sin márgenes */
+  padding: 0; /* sin padding por defecto*/
+  position: relative; /* posicionamiento absoluto relativo al body */
+}
+
+
+
+
+/* ---------------------------------------------
+  ENCABEZADO PRINCIPAL
+--------------------------------------------- */
+header {
+  background-color: transparent; /*quito el fondo para ver imagen detrás */
+  padding: 3rem 2rem 2rem; /* espaciado superior, horizontal, inferior */
+  text-align: center; /*centramos el contenido */
+  border-bottom: 1px solid #222; /*linea divisora*/
+  position: relative;
+  z-index: 2; /* arriba del fondo */
+}
+
+header h1 {
+  color: #768ac2; 
+  font-size: 2.5rem; /* Tamaño del nombre principal */
+  margin-bottom: 0.5rem;
+}
+
+.name-tooltip {
+  position: relative; /* para posicionar el tooltip */
+  display: inline-block;
+  cursor: help; /* cursor de ayuda */
+  color: #768ac2;
+  z-index: 10;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content; /*andcho segun el */
+  background-color: rgba(0, 0, 0, 0.8); /*dondo semitransparente */
+  color: #7a9bcc;
+  text-align: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.4s ease;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  z-index: 20;
+  pointer-events: none; /*no bloquea clics */
+  box-shadow: 0 0 10px rgba(191, 162, 111, 0.3);
+}
+
+.name-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1; /* para hacer visible el tooltip */
+}
+
+
+header p {
+  color: #c1c9e0;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+
+header blockquote {
+  font-style: italic;
+  color: #f01a0b; 
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+
+
+
+
+/* ---------------------------------------------
+  fondo y conten principal
+ */
+.main-background {
+  position: relative;
+  background-image: url("../assets/images/1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 4rem 0;
+}
+
+.main-background::before {
+  content: ""; 
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /*sombre negra*/
+  z-index: 0; /*detras del contenido */
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(12, 12, 12, 0.85);
+  border: 1px solid #222;
+}
+
+
+
+/* 
+secciones individuales
+--------------------------------------------- */
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: #f0c97d; 
+  border-bottom: 1px solid #4b2e2e;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  color: rgb(211, 202, 163);
+  text-align: justify;
+}
+
+section ul {
+  padding-left: 1.5rem;
+}
+
+section li {
+  margin-bottom: 0.8rem;
+  color: #e8e6e3;
+}
+
+
+
+/* 
+enlaces
+ */
+a {
+  color: #ae5f43;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bfa26f;
+}
+
+
+
+/* ---------------------------------------------
+boton de descarga
+--------------------------------------------- */
+#downloadBtn {
+  background-color: transparent;
+  border: 2px solid #bfa26f;
+  color: #bfa26f;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 1rem;
+}
+
+
+#downloadBtn:hover {
+  background-color: #bfa26f;
+  color: #0b0b0b;
+}
+
+
+
+
+/* 
+foot
+--------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #4b2e2e;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------
+animaciones
+--------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+
+.fade-in-up {
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s ease-out;
+}
+
+
+
+
+/* ---------------------------------------------
+musica
+--------------------------------------------- */
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(240, 201, 125, 0.15);
+  color: #8bbff0;
+  border: 1px solid #bfa26f;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.music-toggle:hover {
+  background-color: rgba(240, 201, 125, 0.35);
+  transform: scale(1.1);
+}
+
+
+
+/* tooltip para skills */
+.tooltip-skill {
+  position: relative;
+  cursor: help;
+  color: #8bbff0;
+  text-decoration: dotted underline;
+  margin-right: 0.4rem;
+}
+
+
+
+.tooltip-text-skill {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #f0c97d;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(240, 201, 125, 0.3);
+}
+
+.tooltip-skill:hover .tooltip-text-skill {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* 
+overlay secreto
+ */
+#overlaySecret {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(10, 10, 10, 0.97);
+  color: #8bbff0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.overlay-content {
+  max-width: 460px;
+  width: 90%;
+  padding: 1rem 1.2rem;
+  background: rgba(20, 20, 20, 0.96);
+  border: 1px solid #8bbff0;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 0 25px rgba(139, 191, 240, 0.4);
+  margin: 0 auto;
+  backdrop-filter: blur(3px);
+}
+
+#terminal.modo-terminal {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #bfa26f;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.45;
+  background: transparent;
+  padding: 0;
+}
+
+
+.overlay-content.centrado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay-content.centrado pre {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+#secretInput {
+  background-color: #0b0b0b;
+  color: #f0c97d;
+  border: 1px solid #8bbff0;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-family: monospace;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  margin-top: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  display: none;
+}
+
+
+
+#secretInput:focus {
+  box-shadow: 0 0 6px #8bbff0;
+}
+
+
+#closeOverlay {
+  margin-top: 1rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  background-color: transparent;
+  border: 2px solid #8bbff0;
+  color: #8bbff0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  display: none;
+}
+
+
+
+#closeOverlay:hover {
+  background-color: #8bbff0;
+  color: #0b0b0b;
+}
+
+@media screen and (max-width: 480px) {
+  .overlay-content {
+    max-width: 95vw;
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+
+  .overlay-content pre {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="es"> <!-- Comienza el documento HTML, con idioma español -->
+
+<head>
+  <meta charset="utf-8" /> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Escalado responsivo en móviles -->
+  <title>Jessica Stephanie Garcia Monjaraz – CV Web</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- enlace  al archivo de estilos CSS que tiene los estilos quepersonalice -->
+  <link rel="stylesheet" href="style/style.css" />
+
+  <!--enlace al CSS de Leaflet mapas interactivos) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+
+  <!-- cancion  la petite fille de la mer -->
+  <audio id="bgMusic" loop>
+    <source src="assets/audio/1.mp3" type="audio/mpeg" /> <!-- Archivo de audio MP3 -->
+  </audio>
+
+
+
+  <!-- para el boton flotante de la música -->
+  <div class="music-toggle" id="musicToggle">🎵</div>
+
+
+  <!-- encabezdo principal de mi CV -->
+  <header>
+    <h1 class="name-tooltip">
+      Jessica Stephanie Garcia Monjaraz
+      <!-- Tooltip al pasar el mouse por el nombre -->
+      <span class="tooltip-text">You can call me Stephanie Monjaraz</span>
+    </h1>
+
+
+    <!-- sub con especialidad -->
+    <p id="subtitle">Electrical & Electronics Engineering | Control, Robotics & Embedded Systems</p>
+
+    <!-- mi cita-->
+    <blockquote id="quote">“Not everyone can become a great technologist, but great technologists can come from anywhere.”</blockquote>
+  </header>
+
+  <!-- fondo con imagen  -->
+  <div class="main-background">
+    <main>
+      <!-- seccion para tener mi resumen Profesional, individual para editar en css -->
+      <section class="fade-in-up" id="summary">
+        <h2>Professional Summary</h2>
+        <p>Electrical and Electronics Engineering student specializing in Control and Robotics at UNAM. Experienced in embedded systems, firmware development (C/C++), Python scripting, and hardware prototyping. Passionate about assistive technologies and open-source projects. Currently leading the development of Rightma Sense, a wearable postural monitoring system for visually impaired individuals, integrating IMU sensors and haptic feedback.</p>
+        <p>Committed to ethical and inclusive tech innovation with social impact. Skilled in working across interdisciplinary teams focused on real-world problem solving through human-centered design. Eager to contribute to projects that align technology with purpose and equity.</p>
+      </section>
+
+      <!--seccion: Educación -->
+      <section class="fade-in-up" id="education">
+        <h2>Education</h2>
+        <p><strong>UNAM – Faculty of Engineering, Mexico City</strong><br />
+        <span>Bachelor's in Electrical and Electronics Engineering – Robotics and Control Track</span><br />
+        <span>Expected graduation: December 2025</span></p>
+        <p><strong>Thesis:</strong> Rightma Sense – Wearable postural monitoring system for visually impaired individuals, integrating IMU sensors, haptic feedback, embedded firmware, and ROS-based data pipelines.</p>
+        <p>Participated in biomedical and automation projects with social applications.<br />
+        <strong>Relevant coursework:</strong> Data Structures, Operating Systems, Digital Design, Control Systems, Microcontrollers, Systems Programming.</p>
+      </section>
+
+
+      <!-- sección: experiencia -->
+      <section class="fade-in-up" id="experience">
+        <h2>Experience</h2>
+        <p><strong>Data Contributor – Open Source Collaboration</strong><br />
+        <em>Mar. 2025 – Present</em><br />
+        Built Python tools for dataset comparison and identity verification. Improved data validation logic and reporting accuracy.<br />
+        Collaborated remotely with international teams using GitHub, CI workflows, and Agile-based task management.</p>
+
+        <p><strong>Developer – DGAPA Educational Tech (UNAM)</strong><br />
+        <em>Oct. 2024 – Present</em><br />
+        Created a modular web interface for STEM learning. Focused on accessibility, improved user navigation, and dynamic content generation.<br />
+        Led version control efforts and code integration through structured pull request cycles.</p>
+      </section>
+
+
+
+      <!-- seccion para los proyectos-->
+      <section class="fade-in-up" id="projects">
+        <h2>Projects</h2>
+
+        <!--tesis -->
+        <p><strong>Rightma Sense – Postural Monitoring System</strong><br />
+        Wearable embedded system designed for visually impaired users, featuring an MPU6050 IMU and vibration motors.<br />
+        Firmware developed in C and Python, with data logging and haptic feedback implemented via ROS.<br />
+        Tested in real-world scenarios for accessibility and usability validation.</p>
+
+
+        <!--terminal -->
+        <p><strong>ShellBoxPlay – Terminal Game Suite in Bash</strong><br />
+        Interactive toolset built entirely in Bash, including user authentication, ASCII graphics, and MP3 playback via <code>mpg123</code>.<br />
+        Designed for modularity, process control, and secure input/output management.<br />
+        <a href="https://github.com/StephMonjaraz/ShellBoxPlay" target="_blank">GitHub</a></p>
+
+
+
+        <!--tienda en C -->
+        <p><strong>TiendaC – C-based E-commerce Simulation</strong><br />
+        Console-based application in C using modular logic, file persistence, and dynamic memory handling.<br />
+        Emphasized memory-safe design principles and user input validation.<br />
+        <a href="https://github.com/StephMonjaraz/StructuredRetailApp-C.git" target="_blank">GitHub</a></p>
+
+
+        <!-- la alerta para españa.-->
+        <p><strong>Flood Alert Simulation – LabVIEW</strong><br />
+        Disaster alert model for flood scenarios using real-time water level simulations and feedback logic.<br />
+        Visualized thresholds and response triggers in a control-system simulation context.</p>
+      </section>
+
+
+      <!-- seccion para ms habilidades técnicas -->
+      <section class="fade-in-up" id="skills">
+        <h2>Technical Skills</h2>
+
+
+        <!--lenguajes proga-->
+        <p><strong>Languages:</strong>
+          <span class="tooltip-skill">Python<span class="tooltip-text-skill">Scripting, automation, data analysis</span></span>,
+          <span class="tooltip-skill">C<span class="tooltip-text-skill">Embedded programming, memory management</span></span>,
+          <span class="tooltip-skill">C++<span class="tooltip-text-skill">Object-oriented design, robotics integration</span></span>,
+          <span class="tooltip-skill">Bash<span class="tooltip-text-skill">Shell scripting, terminal automation</span></span>,
+          <span class="tooltip-skill">Java<span class="tooltip-text-skill">Basic backend & object-oriented programming</span></span>,
+          <span class="tooltip-skill">SQL<span class="tooltip-text-skill">Database queries and data manipulation</span></span>
+        </p>
+
+
+        <!-- herramientas y frameworks, tooltip-text-skill para explicar en especifio-->
+        <p><strong>Frameworks / Tools:</strong>
+          <span class="tooltip-skill">Git<span class="tooltip-text-skill">Version control and collaboration</span></span>,
+          <span class="tooltip-skill">GitHub<span class="tooltip-text-skill">Repository management and CI/CD</span></span>,
+          <span class="tooltip-skill">Linux<span class="tooltip-text-skill">System administration and development</span></span>,
+          <span class="tooltip-skill">ROS<span class="tooltip-text-skill">Robot Operating System for automation</span></span>,
+          <span class="tooltip-skill">LabVIEW<span class="tooltip-text-skill">Graphical programming for control systems</span></span>
+        </p>
+
+
+
+        <!-- hardwre-->
+        <p><strong>Hardware:</strong>
+
+          <span class="tooltip-skill">Embedded C<span class="tooltip-text-skill">Microcontroller programming</span></span>,
+          <span class="tooltip-skill">PCB Design (SMD)<span class="tooltip-text-skill">Schematic capture, layout, JLCPCB</span></span>,
+          <span class="tooltip-skill">IMU Sensors<span class="tooltip-text-skill">Motion and orientation detection</span></span>,
+          <span class="tooltip-skill">BLE Modules<span class="tooltip-text-skill">Wireless communication (ESP32, HM-10)</span></span>
+        </p>
+
+
+        <!--adicional -->
+        <p><strong>Additional:</strong>
+          <span class="tooltip-skill">Control Systems<span class="tooltip-text-skill">PID, modeling, feedback loop design</span></span>,
+          <span class="tooltip-skill">Debugging<span class="tooltip-text-skill">Troubleshooting and logic validation</span></span>,
+          <span class="tooltip-skill">Systems Programming<span class="tooltip-text-skill">Low-level coding, memory, processes</span></span>,
+          <span class="tooltip-skill">Agile Practices<span class="tooltip-text-skill">Sprint planning, stand-ups, retros</span></span>
+        </p>
+      </section>
+
+
+      <!-- Sección: areas de enfoque -->
+      <section class="fade-in-up" id="focus-areas">
+        <h2>Focus Areas</h2>
+        <p>Software Engineering · Embedded Systems · Bash Scripting · Automation · Infrastructure · Open-Source Collaboration · Ethical Technology</p>
+      </section>
+
+
+      <!--idiomas-->
+      <section class="fade-in-up" id="languages">
+        <h2>Languages</h2>
+        <p><strong>Spanish:</strong> Native</p>
+        <p><strong>English:</strong> Advanced (C1) – Proficient in technical reading, writing, and communication. Currently improving fluency for professional environments and client interaction.</p>
+      </section>
+
+
+      <!-- mi contacto  -->
+      <section class="fade-in-up" id="contact">
+        <h2>Contact</h2>
+        <p><span>Email:</span> <a href="mailto:stephanie.monjaraz.eng@gmail.com">stephanie.monjaraz.eng@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/StephMonjaraz" target="_blank">github.com/StephMonjaraz</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/stephanie-monjaraz" target="_blank">linkedin.com/in/stephanie-monjaraz</a></p>
+        <p><span>Phone:</span> <a href="tel:+525540107887">+52 5540107887</a></p>
+        <button id="downloadBtn">Download PDF CV</button>
+      </section>
+
+
+
+      <!-- seccion: mi ubicacion-->
+      <section class="fade-in-up" id="map">
+        <h2>Where I'm Based</h2>
+        <p>Currently based in Mexico City 🇲🇽. Open to remote, hybrid, or relocation opportunities depending on the project's scope and mission.</p>
+        <div id="mapContainer" style="width: 100%; height: 300px; border-radius: 10px; overflow: hidden;"></div>
+      </section>
+
+
+
+      <!-- Sección final de prueba-->
+      <section class="fade-in-up" id="lab">
+        <h2>Mini Lab / Test Zone</h2>
+        <div class="lab-card">
+          <h3>NeuroControl – Cognitive Feedback Loop</h3>
+          <p>Experimental concept combining psychiatric signal interpretation (EEG patterns) with adaptive control theory. Aims to develop closed-loop feedback for emotion-aware therapeutic robotics.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+
+  <!-- Footer para ell easter egg-->
+  <footer>
+    <p>© 2025 <span id="easterTrigger" style="cursor: pointer; text-decoration: none;">Jessica Stephanie Garcia Monjaraz</span></p>
+  </footer>
+
+
+  <!-- Cuadro overlay secreto, -->
+  <div id="overlaySecret" class="overlay-centro">
+    <div class="overlay-content centrado" id="overlayBox">
+      <pre class="typewriter" id="terminal">CERCA TROVA</pre> <!-- mensaje inicial -->
+
+      <!-- campo para la  contraseña-->
+      <input type="text" id="secretInput" placeholder="Enter password..." autocomplete="off" />
+
+      <!-- boton para cerrar el overlay -->
+      <button id="closeOverlay">✖ Close</button>
+    </div>
+  </div>
+
+
+  <!-- scriptssexternos -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- Leaflet para mapa -->
+  <script src="js/script.js"></script> <!-- Script personalizado -->
+</body>
+</html>
